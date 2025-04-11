@@ -15,7 +15,7 @@
 /* Style the header links */
 .header a {
   /* float: left; */
-  color: black;
+  color: #1c1c1c;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -34,7 +34,7 @@
 .header a:hover {
   background-color: #ddd;
   /* background-color: #b3dbed; */
-  color: black;
+  color: #1c1c1c;
 }
 
 /* Style the active/current link*/
@@ -53,6 +53,25 @@
   .header-right {
     float: none;
   }
+}
+
+h1 {
+  color: #1c1c1c;
+}
+h2 {
+  color: #1c1c1c;
+}
+h3 {
+  color: #1c1c1c;
+}
+h4 {
+  color: #1c1c1c;
+}
+h5 {
+  color: #1c1c1c;
+}
+P {
+  color: #1c1c1c;
 }
 
 /* FORM STYLING */

@@ -6,15 +6,89 @@
   </head>
   <div class="header">
     <a href="../../index.html">Home</a>
-    <a class="active" href="../../src/html/contact.html">Contact</a>
     <a href="../../src/html/about.html">About</a>
     <a href="../../src/html/services.html">Services</a>
+    <a class="active" href="../../src/html/contact.html">Contact</a>
   </div>
   <body>
-    <div style="display: flex">
-      <div></div>
+    <div style="display: flex; flex-direction: row; gap: 64px; padding: 24px; justify-content: space-evenly;">
+        <div style="width: 100%">
+        <h1>
+          Contact Dylan
+        </h1>
+        <p>
+          Use the form below to contact Dylan with questions or opportunities.
+        </p>
+        <div class="container" style="max-width: 600px; margin-top: 32px">
+          <form name="forms" id="forms" style="gap: 8px">
+        
+            <!-- <label for="name" style="margin-bottom: 8px">Name</label> -->
+            <input style="margin-bottom: 8px" type="text" id="name" name="name" placeholder="Name" >
+
+            <!-- <label for="pronouns" style="margin-bottom: 8px">Pronouns</label> -->
+            <input style="margin-bottom: 8px" type="text" id="pronouns" name="pronouns" placeholder="Pronouns">
+        
+            <!-- <label for="email">Email</label> -->
+            <input style="margin-bottom: 8px" type="text" id="email" name="email" placeholder="Email" type="email">
+                    
+            <!-- <label for="subject" style="margin-bottom: 8px">Subject</label> -->
+            <input style="margin-bottom: 8px" type="text" id="subject" name="subject" placeholder="Subject">
+        
+            <!-- <label for="message">Message</label> -->
+            <textarea style="margin-bottom: 8px; height: 200px" id="message" name="message" placeholder="Write something..."></textarea>
+        
+            <input type="submit" value="Submit">
+        
+          </form>
+          <p id="thank-you-message">
+            Sent! Thank you for contacting Dylan. They will be in touch with you very soon.
+          </p>
+          
+          <script>
+            const formElement = document.querySelector('form#forms')
+        
+            // convert the form to JSON
+            const getFormJSON = (form) => {
+              const data = new FormData(form);
+              return Array.from(data.keys()).reduce((result, key) => {
+                result[key] = data.get(key);
+                return result;
+              }, {});
+            };
+        
+            const handler = (event) => {
+              event.preventDefault();
+              const valid = formElement.reportValidity();
+              const thankYouMessage = document.querySelector('#thank-you-message');
+              if (valid) {
+                const result = getFormJSON(formElement);
+                fetch('https://script.google.com/macros/s/AKfycbwlJAI0MVmw9-AqPlNTni3AGBFYUjs22L6bGNjblkeegSBJMLnBRvkldt8EiblaB71ZgQ/exec', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'text/plain;charset=utf-8',
+                  },
+                  body: JSON.stringify(result),
+                  method: 'POST',
+                  redirect: 'follow',
+                }).then(response => {
+                    console.log("success:", response);
+                    formElement.reset()
+                    thankYouMessage.classList.add('show');
+                    setTimeout(() => form.submit(), 2000);
+                }).catch(err => {
+                    console.log("Error:" + err);
+                });
+              }
+            }
+        
+            formElement.addEventListener("submit", handler)
+          </script>
+        </div>
+        
+      </div>
+      
       <div>      
-        <img src="../images/dylan4.jpg" style="width:20vh;"></img>
+        <img src="../images/dylan4.jpg" style="height: 60vh; border-radius: 8px"></img>
       </div>
     </div>
   </body>

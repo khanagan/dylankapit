@@ -1,6 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .flexbox {
+        flex-direction: row;
+        gap: 64px;
+      }
+      .left{
+        float: left;
+        border-width: 48px; 
+        height: 70vh
+      }
+      .right {
+        padding-top: 84px;
+        float: left;
+        width: 40%;
+      }
+      .title {
+        font-size: 64px;
+        width: 30vw;
+
+      }
+    
+      @media only screen and (max-width: 620px) {
+        /* For mobile phones: */
+        .left {
+          height: 60%;
+          border-width: 32px;
+          width: 60%;
+          justify-self: center;
+        }
+        .right { /* TODO - get photo centered or equal width to text box*/
+          padding-top: 0;
+          height: 30%;
+          width: 70%;
+        }
+        .flexbox {
+          flex-direction: column;
+          gap: 32px;
+          align-items: center;
+        }
+        .title {
+          margin-top: 0;
+          margin-bottom: 16px;
+          font-size: 56px;
+          width: 100%
+        }
+        .subtitle {
+          margin-top: 8px
+        }
+      }
+      </style>
     <link href="src/css/index.css" type="text/css" rel="stylesheet" />
     <title>Dylan Kapit</title>
   </head>
@@ -12,17 +63,14 @@
   </div>
   <body style="padding-top: 0px">
    
-    <div style="display: flex; justify-content: center; gap: 64px; padding: 16px; height: 80vh;"
-    > 
-      <img src="src/images/dylan1.jpg" style="border-color: #1c1c1c; border-radius: 8px; border-width: 48px; border-style: solid; justify-self: center"></img>
-      <div style="display: flex; flex-direction: column; justify-content: center;">
-        <h1 style="width: 30vw; font-size: 64px;">Dylan Kapit</h1>
-        <h2 style="margin-bottom: 0px; margin-top: 0px;">Relationship Coach</h2>
-        <h2 style="margin-bottom: 0px;">Educator</h2>
-        <h2 style="margin-bottom: 0px;">Author</h2>
+    <div class="flexbox" style="display: flex; justify-content: center; padding: 16px;"> 
+      <img class="left" src="src/images/dylan1.jpg" style="border-color: #1c1c1c; border-radius: 8px; border-style: solid; justify-self: center"></img>
+      <div class="right" style="display: flex; flex-direction: column; justify-content: center;">
+        <h1 class="title">Dylan Kapit</h1>
+        <h2 class="subtitle" style="margin-bottom: 0px; margin-top: 0px;">Relationship Coach</h2>
+        <h2 class="subtitle" style="margin-bottom: 0px;">Educator</h2>
+        <h2 class="subtitle" style="margin-bottom: 0px;">Author</h2>
       </div>
-     
-
    </div>
   </body>
 </html>

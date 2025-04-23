@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .flexbox {
+        flex-direction: row;
+      }
+      .left{
+        float: left;
+        width: 40%;
+      }
+      .right {
+        padding-top: 84px;
+        float: left;
+        width: 40%;
+      }
+      @media only screen and (max-width: 620px) {
+        /* For mobile phones: */
+        .left, .right {
+          width: 100%;
+        }
+        .right { /* TODO - get photo centered or equal width to text box*/
+          padding-top: 0;
+        }
+        .flexbox {
+          flex-direction: column;
+        }
+      }
+      </style>
     <link href="../css/index.css" type="text/css" rel="stylesheet" />
     <title>Dylan Kapit | About</title>
   </head>
@@ -11,8 +38,8 @@
     <a href="../../src/html/contact.html">Contact</a>
   </div>
   <body>
-    <div style="display: flex; flex-direction: row; gap: 32px; padding: 24px; justify-content: space-evenly;">
-      <div style="max-width: 600px;" >
+    <div style="display: flex; gap: 32px; padding: 24px; justify-content: space-evenly;" class="flexbox">
+      <div class="left">
         <h1>About</h1>
         <div style=" background-color: #f2f2f2; padding: 16px; border-radius: 8px;">
           <p >
@@ -28,8 +55,8 @@
         </div>
        
       </div>
-      <div style="padding-top: 84px">      
-        <img src="../images/dylan5.jpg" style="height:70vh; border-radius: 8px;"></img>
+      <div class="right">      
+        <img src="../images/dylan5.jpg" style="max-height:70vh; border-radius: 8px;"></img>
       </div>
     </div>
   </body>

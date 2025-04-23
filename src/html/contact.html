@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .flexbox {
+        flex-direction: row;
+      }
+      .right {
+        padding-top: 84px;
+        float: left;
+        width: 40%;
+      }
+      @media only screen and (max-width: 620px) {
+        /* For mobile phones: */
+        .right { /* TODO - get photo centered or equal width to text box*/
+          padding-top: 0;
+          width: 100%;
+        }
+        .flexbox {
+          flex-direction: column;
+        }
+      }
+      </style>
     <link href="../css/index.css" type="text/css" rel="stylesheet" />
     <title>Dylan Kapit | Contact</title>
   </head>
@@ -11,7 +32,7 @@
     <a class="active" href="../../src/html/contact.html">Contact</a>
   </div>
   <body>
-    <div style="display: flex; flex-direction: row; gap: 64px; padding: 24px; justify-content: space-evenly;">
+    <div class="flexbox" style="display: flex; gap: 64px; padding: 24px; justify-content: space-evenly;">
         <div>
         <h1>
           Contact Dylan
@@ -19,7 +40,7 @@
         <p>
           Use the form below to contact Dylan with questions or opportunities.
         </p>
-        <div class="container" style="max-width: 600px; margin-top: 32px">
+        <div class="container" style="margin-top: 32px;">
           <form name="forms" id="forms" style="gap: 8px">
         
             <!-- <label for="name" style="margin-bottom: 8px">Name</label> -->
@@ -87,7 +108,7 @@
         
       </div>
       
-      <div style="padding-top: 84px">      
+      <div class="right">      
         <img src="../images/dylan4.jpg" style="height: 60vh; border-radius: 8px"></img>
       </div>
     </div>

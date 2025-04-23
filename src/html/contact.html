@@ -6,6 +6,10 @@
       .flexbox {
         flex-direction: row;
       }
+      .left {
+        float: left;
+        width: 40%;
+      }
       .right {
         padding-top: 84px;
         float: left;
@@ -13,6 +17,9 @@
       }
       @media only screen and (max-width: 620px) {
         /* For mobile phones: */
+        .left {
+          width: 100%
+        }
         .right { /* TODO - get photo centered or equal width to text box*/
           padding-top: 0;
           width: 100%;
@@ -33,7 +40,7 @@
   </div>
   <body>
     <div class="flexbox" style="display: flex; gap: 64px; padding: 24px; justify-content: space-evenly;">
-        <div>
+        <div class="left">
         <h1>
           Contact Dylan
         </h1>

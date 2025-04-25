@@ -5,7 +5,7 @@
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #2c2d2e;
   padding: 20px 10px;
   display: flex;
   justify-content: center;
@@ -14,8 +14,7 @@
 
 /* Style the header links */
 .header a {
-  /* float: left; */
-  color: #1c1c1c;
+  color: #ddd;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -32,15 +31,19 @@
 
 /* Change the background color on mouse-over */
 .header a:hover {
-  background-color: #ddd;
-  /* background-color: #b3dbed; */
-  color: #1c1c1c;
+  color: #ddd;
+  background-color: #1c1c1c;
 }
 
 /* Style the active/current link*/
 .header a.active {
-  background-color: #03a9f4;
-  color: white;
+  background-color: #ddd;
+  color: #1c1c1c;
+}
+
+.body {
+  background-color: #dae7ed;
+  margin: 0;
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
@@ -56,22 +59,22 @@
 }
 
 h1 {
-  color: #1c1c1c;
+  color: #2c2d2e;
 }
 h2 {
-  color: #1c1c1c;
+  color: #2c2d2e;
 }
 h3 {
-  color: #1c1c1c;
+  color: #2c2d2e;
 }
 h4 {
-  color: #1c1c1c;
+  color: #2c2d2e;
 }
 h5 {
-  color: #1c1c1c;
+  color: #2c2d2e;
 }
 P {
-  color: #1c1c1c;
+  color: #2c2d2e;
 }
 
 /* FORM STYLING */
